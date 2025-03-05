@@ -77,7 +77,6 @@ if ($unit == 'F') {
     else {
     echo "Invalid input\n";
     //here exit is used to stop the wehn the input is invalid  like there as u can see i use a print after this if else functio so if the input is invalid the program will stop and print the invalid input
-    
     exit();
 
 }
