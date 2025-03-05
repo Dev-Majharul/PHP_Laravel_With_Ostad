@@ -19,7 +19,7 @@
 
 
 echo "enter the unit of temperature (F/C/K): ";
-$given_unit = (strtoupper(trim(readline())));
+$given_unit = strtoupper(trim(readline()));
 // here i used strtoupper to convet the input to upercase incase someone enter the input in lowercase  and use trim to remove any unnecessary soace 
 $temperature =  (float)( trim(readline("Enter the temperature: ")));
 
