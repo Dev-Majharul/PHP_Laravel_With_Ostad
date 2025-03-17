@@ -6,11 +6,7 @@ $contacts = [];
 // Function to add a contact
 function addContact(array &$contacts, string $name, string $email, string $phone): void
 {
-    $contacts[] = [
-        'name' => strtoupper($name),
-        'email' => strtoupper($email),
-        'phone' => strtoupper($phone)
-    ];
+    $contacts[] = ['name' => $name, 'email' => $email, 'phone' => $phone];
 }
 // Function to display all contacts
 function viewContact(array $contacts): void
