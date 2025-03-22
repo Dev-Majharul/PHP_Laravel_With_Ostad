@@ -1,0 +1,401 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Share+Tech+Mono&display=swap');
+
+:root {
+    --neon-pink: #ff2a6d;
+    --neon-blue: #05d9e8;
+    --neon-purple: #bd00ff;
+    --cyber-yellow: #f9f002;
+    --bg-dark: #0d0221;
+    --glass-bg: rgba(13, 2, 33, 0.7);
+    --grid-line: rgba(5, 217, 232, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Share Tech Mono', monospace;
+    background-color: var(--bg-dark);
+    background-image: 
+        linear-gradient(0deg, transparent 24%, var(--grid-line) 25%, var(--grid-line) 26%, transparent 27%, transparent 74%, var(--grid-line) 75%, var(--grid-line) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, var(--grid-line) 25%, var(--grid-line) 26%, transparent 27%, transparent 74%, var(--grid-line) 75%, var(--grid-line) 76%, transparent 77%, transparent);
+    background-size: 50px 50px;
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle at center, rgba(189, 0, 255, 0.1) 0%, rgba(13, 2, 33, 0.8) 70%);
+    pointer-events: none;
+}
+.swal2-popup {
+    background: rgba(13, 2, 33, 0.9) !important;
+    border: 1px solid #05d9e8 !important;
+    box-shadow: 
+        0 0 20px rgba(5, 217, 232, 0.5),
+        0 0 40px rgba(189, 0, 255, 0.3),
+        inset 0 0 10px rgba(255, 42, 109, 0.3) !important;
+    border-radius: 10px !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.swal2-title {
+    color: #ff2a6d !important;
+    font-family: 'Orbitron', sans-serif !important;
+    text-shadow: 0 0 10px #ff2a6d !important;
+}
+
+.swal2-html-container {
+    color: white !important;
+    font-family: 'Share Tech Mono', monospace !important;
+}
+
+.swal2-confirm {
+    background: #05d9e8 !important;
+    box-shadow: 0 0 15px rgba(5, 217, 232, 0.5) !important;
+    color: #0d0221 !important;
+    border: none !important;
+    font-family: 'Orbitron', sans-serif !important;
+}
+
+.swal2-confirm:hover {
+    background: #ff2a6d !important;
+}
+
+/* Glitch effect for the welcome text */
+@keyframes glitchText {
+    0% {
+        text-shadow: 0.05em 0 0 #ff2a6d, -0.05em -0.025em 0 #05d9e8;
+    }
+    14% {
+        text-shadow: 0.05em 0 0 #ff2a6d, -0.05em -0.025em 0 #05d9e8;
+    }
+    15% {
+        text-shadow: -0.05em -0.025em 0 #ff2a6d, 0.025em 0.025em 0 #05d9e8;
+    }
+    49% {
+        text-shadow: -0.05em -0.025em 0 #ff2a6d, 0.025em 0.025em 0 #05d9e8;
+    }
+    50% {
+        text-shadow: 0.025em 0.05em 0 #ff2a6d, 0.05em 0 0 #05d9e8;
+    }
+    99% {
+        text-shadow: 0.025em 0.05em 0 #ff2a6d, 0.05em 0 0 #05d9e8;
+    }
+    100% {
+        text-shadow: -0.025em 0 0 #ff2a6d, -0.025em -0.025em 0 #05d9e8;
+    }
+}
+
+.swal2-title.cyberpunk-glitch {
+    animation: glitchText 0.3s infinite;
+}
+.container {
+    width: 90%;
+    max-width: 600px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    box-shadow: 
+        0 0 20px rgba(5, 217, 232, 0.5),
+        0 0 40px rgba(189, 0, 255, 0.3),
+        inset 0 0 10px rgba(255, 42, 109, 0.3);
+    border: 1px solid rgba(5, 217, 232, 0.5);
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+    animation: float 6s ease-in-out infinite;
+    cursor: move; /* Show move cursor */
+    user-select: none; /* Prevent text selection while dragging */
+}
+
+/* Drag handle */
+.drag-handle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: move;
+    background: rgba(5, 217, 232, 0.2);
+    border-radius: 5px;
+    color: var(--neon-blue);
+    font-size: 16px;
+    opacity: 0.7;
+    transition: all 0.3s;
+}
+
+.drag-handle:hover {
+    opacity: 1;
+    background: rgba(5, 217, 232, 0.4);
+}
+
+.glitch-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+    text-shadow: 
+        0 0 5px var(--neon-blue),
+        0 0 10px var(--neon-blue),
+        0 0 20px var(--neon-purple);
+    position: relative;
+}
+
+.glitch-title::before, .glitch-title::after {
+    content: 'DEV-TASK';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.glitch-title::before {
+    color: var(--neon-pink);
+    animation: glitch 2s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(-2px, -2px);
+}
+
+.glitch-title::after {
+    color: var(--neon-blue);
+    animation: glitch 2s infinite reverse;
+    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+    transform: translate(2px, 2px);
+}
+
+
+.task-form {
+    margin-bottom: 25px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--neon-blue);
+    border-radius: 5px;
+}
+
+.task-input {
+    flex: 1;
+    background: rgba(13, 2, 33, 0.7);
+    border: none;
+    padding: 15px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+    color: white;
+}
+
+.task-input:focus {
+    outline: none;
+    box-shadow: 0 0 10px var(--neon-pink);
+}
+
+.add-btn {
+    background: var(--neon-blue);
+    color: var(--bg-dark);
+    border: none;
+    padding: 0 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.add-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: 0.5s;
+}
+
+.add-btn:hover {
+    background: var(--neon-pink);
+}
+
+.add-btn:hover::before {
+    left: 100%;
+}
+
+.task-list {
+    list-style: none;
+}
+
+.task-item {
+    background: rgba(13, 2, 33, 0.8);
+    margin-bottom: 10px;
+    border-left: 3px solid var(--neon-blue);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    cursor: move; /* Move cursor for drag and drop */
+}
+
+.task-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--neon-blue);
+    z-index: 1;
+}
+
+.task-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 0 15px rgba(5, 217, 232, 0.5);
+}
+
+.task-text {
+    flex: 1;
+    word-break: break-word;
+    cursor: text; /* Text cursor for the task text */
+}
+
+.completed {
+    text-decoration: line-through;
+    color: rgba(255, 255, 255, 0.5);
+    border-left-color: var(--neon-purple);
+}
+
+.completed::before {
+    background: var(--neon-purple);
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.toggle-btn {
+    background: rgba(5, 217, 232, 0.2);
+}
+
+.toggle-btn:hover {
+    background: var(--neon-blue);
+}
+
+.delete-btn {
+    background: rgba(255, 42, 109, 0.2);
+}
+
+.delete-btn:hover {
+    background: var(--neon-pink);
+}
+
+.empty-list {
+    text-align: center;
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+    border: 1px dashed var(--neon-blue);
+    border-radius: 5px;
+}
+
+/* Drag and drop styles */
+.task-item.dragging {
+    opacity: 0.5;
+    background: rgba(5, 217, 232, 0.2);
+}
+
+.task-item.drag-over {
+    border-top: 2px solid var(--neon-pink);
+}
+
+/* Position the task action buttons to the right */
+.task-item {
+    justify-content: flex-end;
+}
+
+.task-text {
+    margin-right: auto;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes glitch {
+    0%, 100% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .glitch-title {
+        font-size: 2rem;
+    }
+}
