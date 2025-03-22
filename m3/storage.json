@@ -1,1 +1,26 @@
-[]
+[
+    {
+        "task": "Hello today my task is to complet the todo list design",
+        "done": true
+    },
+    {
+        "task": "push code on github",
+        "done": true
+    },
+    {
+        "task": "submit my assignment",
+        "done": true
+    },
+    {
+        "task": "add sweet allert",
+        "done": true
+    },
+    {
+        "task": "add drag and drop using js",
+        "done": true
+    },
+    {
+        "task": "window resize",
+        "done": true
+    }
+]
